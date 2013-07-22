@@ -10,7 +10,8 @@ Getting Started
 
 * import installation/unitysocial.unitypackage
 * 拖拉"Facebook" Prefab 到您的scene中，點選scene中的"Facebook"，然後您可在"Inspector"看到五個參數。
-![image](http://172.18.106.90/unity/unitysocial/doc/images/raw/master/facebook_setting.jpg)
+* 
+![image](http://172.18.106.90/unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
     - APP_ID - **YOUR_FACEBOOK_APP_ID**
     - PERMISSIONS - **應用程式授權的範圍**
     - EDITOR_TOKEN_FROM_FILE - **Editor的版本中，facebook token存放處**
@@ -53,7 +54,7 @@ Build IOS XCODE Setting
 
 * 修改class裡面AppController.mm
 
-    ![image](http://172.18.106.90/unity/unitysocial/doc/images/raw/master/facebook_xcode_bulid.jpg)
+    ![image](http://172.18.106.90/unity/unitysocial/raw/master/doc/images/facebook_xcode_bulid.jpg)
 
     - 在最上面import部分增加下兩行
 
