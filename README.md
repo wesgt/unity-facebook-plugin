@@ -1,25 +1,28 @@
 UnitySocailPlugin
-============
+=================
 * * *
 
-目前已完成Facebook的串接。
-此FB的套件整合IOS(facebook-ios-sdk3.5.3)、OSX、WINDOWS，如要使用請參照Getting Start。
+目前已完成 Facebook 的串接。
+此FB的套件整合 IOS(facebook-ios-sdk3.5.3)、OSX、WINDOWS，如要使用請參照 Getting Start。
 
 Getting Started
-------------
+---------------
 
 * import installation/unitysocial.unitypackage
-* 拖拉"Facebook" Prefab 到您的scene中，點選scene中的"Facebook"，然後您可在"Inspector"看到五個參數。
-* 
-![image](http://172.18.106.90/unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
+* 拖拉 "Facebook" Prefab 到您的 scene 中，點選 scene 中的 "Facebook" ，然後您可在 "Inspector" 看到五個參數。
+
+    ![image](http://172.18.106.90/unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
     - APP_ID - **YOUR_FACEBOOK_APP_ID**
     - PERMISSIONS - **應用程式授權的範圍**
-    - EDITOR_TOKEN_FROM_FILE - **Editor的版本中，facebook token存放處**
-    - MINI_BROWSER_WIN_PATH - **Editor的win版本中，minibrowser放置處**
-    - MINI_BROWSER_OSX_PATH - **Editor的OSX版本中，minibrowser放置處**
+    - EDITOR_TOKEN_FROM_FILE - **Editor 的版本中， facebook token 存放處**
+    - MINI_BROWSER_WIN_PATH - **Editor 的 win 版本中， minibrowser 放置處**
+    - MINI_BROWSER_OSX_PATH - **Editor 的 OSX 版本中， minibrowser 放置處**
+    
 * modify Assets/Editor/fb_config.ini
+
     - FB_ID - **YOUR_FACEBOOK_APP_ID**
     - FB_DISPLAY_NAME - **YOUR_FACEBOOK_DISPLAY_NAME**
+    
 * Social Event Handling
 
     For example, if you want to 'listen' to a onlogin event:
@@ -35,14 +38,15 @@ Getting Started
     }
     ```
 
-* 初始化SocialNetworkAPI、SocialEventHandler(參照Socail Event Handling範例)
-    - 選擇您要使用的社群類型，目前只有facebook，並初始化。
+* 初始化 SocialNetworkAPI 、 SocialEventHandler (參照 Socail Event Handling 範例)
+
+    - 選擇您要使用的社群類型，目前只有 facebook ，並初始化。
 
     ```cs
     SocialNetworkAPI socialNetworkAPI = SocialNetworkAPI.newSocialType(SocialNetworkAPI.FACEBOOK);
     socialNetworkAPI.initialize();
     ```
-    - 初始化SocialEventHandler。
+    - 初始化 SocialEventHandler。
 
     ```cs
     SocialEventHandler socialEventHandler = new SocialEventHandler(this);
@@ -50,20 +54,19 @@ Getting Started
     ```
 
 Build IOS XCODE Setting
-------------
+-----------------------
 
-* 修改class裡面AppController.mm
+* 修改 class 裡面 AppController.mm
 
     ![image](http://172.18.106.90/unity/unitysocial/raw/master/doc/images/facebook_xcode_bulid.jpg)
-
-    - 在最上面import部分增加下兩行
+    - 在最上面 import 部分增加下兩行
 
     ```ruby
     #import "FBAppCall.h"
     #import "FacebookUnityPlugin.h"
     ```
 
-    - 在最後面的end前面貼上
+    - 在最後面的 end 前面貼上
 
     ```ruby
     - (BOOL)application:(UIApplication *)application
@@ -79,12 +82,12 @@ Build IOS XCODE Setting
 * Run
 
 Develop
-------------
+-------
 
-* 如要新增新的社群平台，請繼承SocialNetworkAPI
+* 如要新增新的社群平台，請繼承 SocialNetworkAPI
 
 Third party plugins
-------------
+-------------------
 
 * [facebook-ios-sdk3.5.3](https://github.com/facebook/facebook-ios-sdk)
 * [minibrowser]()
