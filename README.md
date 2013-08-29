@@ -58,7 +58,7 @@ Build IOS XCODE Setting
 
 * 修改 class 裡面 AppController.mm
 
-    ![image](http://172.18.106.90/unity/unitysocial/raw/master/doc/images/facebook_xcode_bulid.jpg)
+    ![image](http://172.18.106.90/softstar-unity/unitysocial/raw/master/doc/images/facebook_xcode_bulid.jpg)
     - 在最上面 import 部分增加下兩行
 
     ```ruby
