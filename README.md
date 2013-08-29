@@ -11,18 +11,18 @@ Getting Started
 * import installation/unitysocial.unitypackage
 * 拖拉 "Facebook" Prefab 到您的 scene 中，點選 scene 中的 "Facebook" ，然後您可在 "Inspector" 看到五個參數。
 
-    ![image](http://172.18.106.90/unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
+    ![image](http://172.18.106.90/softstar-unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
     - APP_ID - **YOUR_FACEBOOK_APP_ID**
     - PERMISSIONS - **應用程式授權的範圍**
     - EDITOR_TOKEN_FROM_FILE - **Editor 的版本中， facebook token 存放處**
     - MINI_BROWSER_WIN_PATH - **Editor 的 win 版本中， minibrowser 放置處**
     - MINI_BROWSER_OSX_PATH - **Editor 的 OSX 版本中， minibrowser 放置處**
-    
+
 * modify Assets/Editor/fb_config.ini
 
     - FB_ID - **YOUR_FACEBOOK_APP_ID**
     - FB_DISPLAY_NAME - **YOUR_FACEBOOK_DISPLAY_NAME**
-    
+
 * Social Event Handling
 
     For example, if you want to 'listen' to a onlogin event:
