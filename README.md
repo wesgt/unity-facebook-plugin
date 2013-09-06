@@ -8,83 +8,95 @@ UnitySocailPlugin
 Getting Started
 ---------------
 
-* import installation/unitysocial.unitypackage
-* 拖拉 "Facebook" Prefab 到您的 scene 中，點選 scene 中的 "Facebook" ，然後您可在 "Inspector" 看到五個參數。
+### Install
 
-    ![image](http://172.18.106.90/softstar-unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
-    - APP_ID - **YOUR_FACEBOOK_APP_ID**
-    - PERMISSIONS - **應用程式授權的範圍**
-    - EDITOR_TOKEN_FROM_FILE - **Editor 的版本中， facebook token 存放處**
-    - MINI_BROWSER_WIN_PATH - **Editor 的 win 版本中， minibrowser 放置處**
-    - MINI_BROWSER_OSX_PATH - **Editor 的 OSX 版本中， minibrowser 放置處**
+import installation/unitysocial.unitypackage
 
-* modify Assets/Editor/fb_config.ini
+### Facebook Prefab Setting
 
-    - FB_ID - **YOUR_FACEBOOK_APP_ID**
-    - FB_DISPLAY_NAME - **YOUR_FACEBOOK_DISPLAY_NAME**
+拖拉 "Facebook" Prefab 到您的 scene 中，點選 scene 中的 "Facebook" ，然後您可在 "Inspector" 看到五個參數。
 
-* Social Event Handling
+* APP_ID - **YOUR_FACEBOOK_APP_ID**
+* PERMISSIONS - **應用程式授權的範圍**
+* EDITOR_TOKEN_FROM_FILE - **Editor 的版本中， facebook token 存放處**
+* MINI_BROWSER_WIN_PATH - **Editor 的 win 版本中， minibrowser 放置處**
+* MINI_BROWSER_OSX_PATH - **Editor 的 OSX 版本中， minibrow ser 放置處**
 
-    For example, if you want to 'listen' to a onlogin event:
+![image](http://172.18.106.90/softstar-unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
 
-    ```cs
-    public void initEventHandler() {
-        SocialEvents.onLogin += onLogin;
-    }
 
-    public void onLogin(string accessToken) {
-        Debug.Log("[SocialEventHandler] onLogin");
-        Debug.Log("[SocialEventHandler] accessToken : " + accessToken);
-    }
-    ```
+### fb_config.ini setting
 
-* 初始化 SocialNetworkAPI 、 SocialEventHandler (參照 Socail Event Handling 範例)
+modify Assets/Editor/fb_config.ini
 
-    - 選擇您要使用的社群類型，目前只有 facebook ，並初始化。
+* FB_ID - **YOUR_FACEBOOK_APP_ID**
+* FB_DISPLAY_NAME - **YOUR_FACEBOOK_DISPLAY_NAME**
 
-    ```cs
-    SocialNetworkAPI socialNetworkAPI = SocialNetworkAPI.newSocialType(SocialNetworkAPI.FACEBOOK);
-    socialNetworkAPI.initialize();
-    ```
-    - 初始化 SocialEventHandler。
 
-    ```cs
-    SocialEventHandler socialEventHandler = new SocialEventHandler(this);
-    socialEventHandler.initEventHandler();
-    ```
+### Social Event Handling
+
+For example, if you want to 'listen' to a onlogin event:
+
+```cs
+public void initEventHandler() {
+    SocialEvents.onLogin += onLogin;
+}
+
+public void onLogin(string accessToken) {
+    Debug.Log("[SocialEventHandler] onLogin");
+    Debug.Log("[SocialEventHandler] accessToken : " + accessToken);
+}
+```
+
+### 初始化 SocialNetworkAPI 、 SocialEventHandler (參照 Socail Event Handling 範例)
+
+選擇您要使用的社群類型，目前只有 facebook ，並初始化。
+
+```cs
+SocialNetworkAPI socialNetworkAPI = SocialNetworkAPI.newSocialType(SocialNetworkAPI.FACEBOOK);
+socialNetworkAPI.initialize();
+```
+- 初始化 SocialEventHandler。
+
+```cs
+SocialEventHandler socialEventHandler = new SocialEventHandler(this);
+socialEventHandler.initEventHandler();
+```
 
 Build IOS XCODE Setting
 -----------------------
 
-* 修改 class 裡面 AppController.mm
+### AppController setting
 
-    ![image](http://172.18.106.90/softstar-unity/unitysocial/raw/master/doc/images/facebook_xcode_bulid.jpg)
-    - 在最上面 import 部分增加下兩行
+修改 class 裡面 AppController.mm
 
-    ```ruby
-    #import "FBAppCall.h"
-    #import "FacebookUnityPlugin.h"
-    ```
+- 在最上面 import 部分增加下兩行
 
-    - 在最後面的 end 前面貼上
+```ruby
+#import "FBAppCall.h"
+#import "FacebookUnityPlugin.h"
+```
 
-    ```ruby
-    - (BOOL)application:(UIApplication *)application
-                openURL:(NSURL *)url
-      sourceApplication:(NSString *)sourceApplication
-             annotation:(id)annotation
-    {
-            return [FBAppCall handleOpenURL:url
-                          sourceApplication:sourceApplication
-                                withSession:[FacebookUnityPlugin getSingleton].session];
-    }
-    ```
-* Run
+- 在最後面的 end 前面貼上
+
+```ruby
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+        return [FBAppCall handleOpenURL:url
+                      sourceApplication:sourceApplication
+                            withSession:[FacebookUnityPlugin getSingleton].session];
+}
+```
+![image](http://172.18.106.90/softstar-unity/unitysocial/raw/master/doc/images/facebook_xcode_bulid.jpg)
+
 
 Develop
 -------
 
-* 如要新增新的社群平台，請繼承 SocialNetworkAPI
+如要新增新的社群平台，請繼承 SocialNetworkAPI
 
 Third party plugins
 -------------------
