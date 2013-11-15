@@ -5,7 +5,7 @@
 
 ## Download
 
-[unitysocial.unitypackage](http://rtd.softstar.com.tw/softstar-unity/unitysocial/blob/master/installation/unitysocial.unitypackage)
+[unitysocial.unitypackage](https://github.com/wesgt/unity-facebook-plugin/raw/master/installation/unitysocial.unitypackage)
 
 ## Use Steps
 
@@ -23,7 +23,7 @@
 * MINI_BROWSER_WIN_PATH - **Editor 的 win 版本中， minibrowser 放置處**
 * MINI_BROWSER_OSX_PATH - **Editor 的 OSX 版本中， minibrow ser 放置處**
 
-![image](http://rtd.softstar.com.tw/softstar-unity/unitysocial/raw/master/doc/images/facebook_setting.jpg)
+![image](https://raw.github.com/wesgt/unity-facebook-plugin/master/doc/images/facebook_setting.jpg)
 
 
 ### 3. 設定 fb_config.ini，將在plist 中自動生成FB 相關設定
@@ -82,7 +82,7 @@ socialEventHandler.initEventHandler();
         withSession:[FacebookUnityPlugin getSingleton].session];
 }
 ```
-![image](http://rtd.softstar.com.tw/softstar-unity/unitysocial/raw/master/doc/images/facebook_xcode_bulid.jpg)
+![image](https://raw.github.com/wesgt/unity-facebook-plugin/master/doc/images/facebook_xcode_bulid.jpg)
 
 ## Develop
 
